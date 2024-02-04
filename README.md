@@ -7,9 +7,8 @@ arxiv :
 
 
 ## Installation
-
+ to create the environment, run the following command:
 ```bash
-# Example installation commands
 
 conda create --name your_environment_name --file requirements.txt
 ```
@@ -22,7 +21,7 @@ for training, run the following command:
 python main.py
 ```
 note that you need to collect the data and put it in the data folder. 
-you can estimate the RTFs using the code that provided in: 
+you can estimate the RTFs using the code that provided in: ### add shron lab git link
 
 
 for evaluation, run the following command:
@@ -35,7 +34,7 @@ in the evaluation the code create new noisy examples and estimate the RTFs using
 after that, we use the estimated RTFs to estimate the speech signal using the MVDR beamformer.
 and finally, we calculate the SNR, STOI,ESTOI and DNSMOS scores for the estimated speech signal.
 
-example of the results:
+example of an output:
 ```bash
 SNR in: -6.00
 SNR out MVDR: 17.48
