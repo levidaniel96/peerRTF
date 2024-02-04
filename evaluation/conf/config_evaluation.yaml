@@ -50,7 +50,7 @@ model_hp:
   model_type: graph                        # graph; linear
 
 # ========== data-sets ==============
-dir_path: /home/dsi/levidan2/code/MVDR/for git/evaluation
+dir_path: /evaluation
 
 flags:
   save_model: True                         # whether to save the model.
