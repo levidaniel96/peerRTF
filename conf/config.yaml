@@ -50,8 +50,8 @@ model_hp:
   model_type: graph                        # graph; linear
 
 # ========== data-sets ==============
-data_set_path: /dsi/gannot-lab2/datasets2/mirage_daniel/data_set_mirage/600ms/graphs_MIRAGE/KNN_Graphs_5_Neighbours ## path to the data set folder.
-model_path: /dsi/gannot-lab2/datasets2/mirage_daniel/data_set_mirage/600ms/graphs_MIRAGE/results_${params.Nl_in}_${params.Nr_in}_to_${params.Nl}_${params.Nr}/train_mode_${modelParams.train_mode}_model_${model_hp.model_type}/results_${loss.loss_type}/num_layers_${modelParams.num_layers}_dropout_${modelParams.dropout}_activation_${modelParams.activation}_activation_out_${modelParams.activation_out}_tanh_alpha_${modelParams.tanh_alpha}_batch_norm_${modelParams.batch_norm}/
+data_set_path: /dataset ## path to the data set folder.
+model_path: /save_model/results_${params.Nl_in}_${params.Nr_in}_to_${params.Nl}_${params.Nr}/train_mode_${modelParams.train_mode}_model_${model_hp.model_type}/results_${loss.loss_type}/num_layers_${modelParams.num_layers}_dropout_${modelParams.dropout}_activation_${modelParams.activation}_activation_out_${modelParams.activation_out}_tanh_alpha_${modelParams.tanh_alpha}_batch_norm_${modelParams.batch_norm}/
 flags:
   save_model: True                         # whether to save the model.
   save_RTFs: True                          # whether to save the RTFs.
@@ -60,9 +60,9 @@ flags:
   load_weights: False                      # whether to load weights.
   test: False                              # whether to only test the model.
 paths: 
-  train_path:     ${data_set_path}/val_KNN_for_MVDR_600ms_T60_mix_pos_one_n_1_spk_128_256_to_128_256_matrix_RTFs_noisy_2048_wlen/
-  val_path:       ${data_set_path}/val_KNN_for_MVDR_600ms_T60_mix_pos_one_n_1_spk_128_256_to_128_256_matrix_RTFs_noisy_2048_wlen/
-  test_path:      ${data_set_path}/test_long_KNN_for_MVDR_600ms_T60_mix_pos_one_n_1_spk_128_256_to_128_256_matrix_RTFs_noisy_2048_wlen/
+  train_path:     ${data_set_path}/train/
+  val_path:       ${data_set_path}/val/
+  test_path:      ${data_set_path}/test/
   results_path:   ${model_path}/results/
   modelData_path: ${model_path}/models/
   modelData_path_saved: ${model_path}/models/
