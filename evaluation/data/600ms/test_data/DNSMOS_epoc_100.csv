@@ -1,0 +1,5 @@
+,filename,len_in_sec,sr,num_hops,OVRL_raw,SIG_raw,BAK_raw,OVRL,SIG,BAK,P808_MOS
+0,/home/dsi/levidan2/code/MVDR/for git/evaluation/data/600ms/test_data/wav/wavs_epoc_100/clean signal.wav,7.856,16000,6,1.350825,1.7815685,1.5082542,1.424752652467579,1.895773213778894,1.718175558636868,3.0773432
+1,/home/dsi/levidan2/code/MVDR/for git/evaluation/data/600ms/test_data/wav/wavs_epoc_100/GCN.wav,7.856,16000,6,0.9961531,1.0486499,1.0753256,1.0900535678265133,1.1931323657506698,1.1820649631337157,2.5467777
+2,/home/dsi/levidan2/code/MVDR/for git/evaluation/data/600ms/test_data/wav/wavs_epoc_100/GEVD.wav,7.856,16000,6,0.9895342,1.0470749,1.0755101,1.0835616643147594,1.191488908782476,1.18230977361917,2.4355373
+3,/home/dsi/levidan2/code/MVDR/for git/evaluation/data/600ms/test_data/wav/wavs_epoc_100/noisy signal.wav,7.856,16000,6,0.9777401,1.0391607,1.0318295,1.0719756202469193,1.1832131051247348,1.1241436360205792,2.2540205
