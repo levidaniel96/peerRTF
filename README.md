@@ -3,7 +3,7 @@
 ## Description
 
 This repository contains the code for the paper "peerRTFs: Robust MVDR Beamforming Using Graph Convolutional Network"
-in the IEEE/ACM Transactions on Audio, Speech, and Language Processing.
+arxiv : 
 
 
 ## Installation
