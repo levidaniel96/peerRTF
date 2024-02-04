@@ -1,0 +1,84 @@
+# =========== Parameters ===========
+params:
+  M: 5                                     # number of microphones.
+  Nl: 128                                  # length of the RTF cut from the left.
+  Nr: 256                                  # length of the RTF cut from the right.
+  Nl_in: 128                               # length of the RTF cut from the left for input features.
+  Nr_in: 256                               # length of the RTF cut from the right for input features.
+  len_of_RTF : ${params.Nl}+${params.Nr}   # length of RTF.
+  feature_size: ${params.Nl}+${params.Nr}  # (${params.M}-1) #(Nl+Nr)*(M-1)   # size of input features.
+  NFFT: 2048                               # number of FFT points.
+  wlen: ${params.NFFT}                     # window length.
+  n_hop: 512                               # hop size.
+  fs: 16000                                # sampling frequency.
+  NUP: ${params.NFFT}//2+1                 # number of unique points in the FFT.
+  ref_mic: 2                               # reference microphone index.
+  both_tim_st: 2                           # start time stamp for both - noise and speech
+  both_tim_fn: 10                          # end time stamp for both - noise and speech
+  length_records: 10                       # length of the records in seconds
+modelParams:
+  num_layers: 2                            # number of layers in the model.
+  feature_size: ${params.feature_size}     # size of input features.
+  dropout: 0.5                             # dropout rate.
+  activation: relu                         # activation function for hidden layerpyts.
+  activation_out: without                     # activation function for the output layer.
+  tanh_alpha: 0.1                          # alpha parameter for the tanh activation function.
+  batch_norm: False                        # whether to use batch normalization.
+  train_mode: one_model                    # training mode (multi_models or one_model).
+  num_hops: 1                              # number of hops in the model.
+
+# ============= Device =============
+device:
+  device_num: 0                           # device number.
+
+# ============ Criterion ============
+loss:
+  loss_mode: MVDR                          # RTFs; MVDR
+  loss_type: si_sdr_2                           # for RTFs: L1; L2; NPM ;SBF;Blocking_loss_with_n ;Blocking_loss  for MVDR: L1; L2; si_sdr ;si_sdr_on_ref ;STOI
+  loss_RTFs_shape: one_RTF                 # concat_RTFs; one_RTF
+  loss_scale: 10
+# =========== Model HP ==============
+model_hp:
+  train_size_spilt: 0.85                   # train size split.
+  val_size_spilt: 0.15                     # validation size split.
+  batchSize: 16                            # number of samples in each mini-batch for training.
+  batchSize_test: 8                        # number of samples in each mini-batch for testing.
+  epochs: 100                              # maximum number of iterations   
+  data_loader_shuffle: True                # whether to shuffle the data.
+  test_loader_shuffle: False               # whether to shuffle the data.
+  num_workers: 8                           # number of workers for loading data.
+  model_type: graph                        # graph; linear
+
+# ========== data-sets ==============
+dir_path: /home/dsi/levidan2/code/MVDR/for git/evaluation
+
+flags:
+  save_model: True                         # whether to save the model.
+  save_RTFs: True                          # whether to save the RTFs.
+  save_oracle_and_noisy: False             # whether to save the oracle and noisy measurements.
+  save_mat: True                           # whether to save the results in mat format.
+  load_weights: False                      # whether to load weights.
+  test: False                              # whether to only test the model.
+paths: 
+
+  
+  modelData_path_saved: ${dir_path}/data/600ms/model_600ms.pt
+  csv_path:       ${dir_path}/data/600ms/test_data/
+  path_AIRs:  ${dir_path}/data/600ms/matrix_AIRs_600_02_test.mat
+  path_AIRs_mirage_OOG: ${dir_path}/data/600ms/AIRs_matrix_OOG_600ms_Array_02.mat
+  path_pink_noise: ${dir_path}/data/my_pink_noise.wav
+  test_data_path: ${dir_path}/data/600ms/test_data/
+  test_RTFs_path : ${dir_path}/data/600ms/test_data/test_RTFs/
+  RTFs_tensor_train_path: ${dir_path}/data/600ms/RTF_matrix_train_tensor.pt
+  save_graphs_path: ${dir_path}/data/600ms/KNN_Graphs_5_Neighbours/
+  save_wav_dir: ${dir_path}/data/600ms/test_data/wav/
+# ============ Optimizer ============
+optimizer:
+  optimizer: Adam
+  learning_rate: 1e-4                      # initial learning rate.
+  weight_decay: 1e-2                       # weight decay (L2 penalty).
+
+# ========== Hydra config ==========
+hydra:
+  run:
+    dir: ${dir_path}/outputs/${model_hp.model_type}_${loss.loss_type}/${now:%Y-%m-%d}/${now:%H-%M-%S}
