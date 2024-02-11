@@ -41,8 +41,9 @@ data
     │   ├── graph_data_1.pt
     │   ├── graph_data_2.pt
     │   └── ...
-
+```
 each graph_data should contain the following:
+
 ```bash
 {
     'graph': graph, # the graph
