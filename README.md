@@ -54,7 +54,7 @@ each graph_data should contain the following:
     'x': clean data, # the clean signal(M channel)
     'n': noise data, # the noise signal(M channel)
     'index': index, # the index of the node in the graph
-    ''
+
 }
 
 ```
