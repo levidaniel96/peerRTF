@@ -4,7 +4,7 @@
 
 This repository contains the code for the paper "peerRTFs: Robust MVDR Beamforming Using Graph Convolutional Network"
 
-arxiv : 
+arxiv link: ## add arxiv link
 
 
 ## Installation
@@ -22,8 +22,43 @@ for training, run the following command:
 python main.py
 ```
 note that you need to collect the data and put it in the data folder. 
-you can estimate the RTFs using the code that provided in: ### add shron lab git link
+you can estimate the RTFs using the code that provided in: ### add sharon lab git link
+the data should be in the following format:
+```bash
+data
+├── train
+│   ── noisy graphs
+│      ├── graph_data_1.pt
+│      ├── graph_data_2.pt
+│      └── ...
+│── val
+│   ── noisy graphs
+│      ├── graph_data_1.pt
+│      ├── graph_data_2.pt
+│      └── ...
+└── test
+    ├── noisy graphs
+    │   ├── graph_data_1.pt
+    │   ├── graph_data_2.pt
+    │   └── ...
 
+each graph_data should contain the following:
+```bash
+{
+    'graph': graph, # the graph
+    'edge_index': edge_index, # the edge index of the graph
+    'RTF': RTF, # the RTF of the noisy signal are the nodes of the graph
+    'clean': clean, # the target RTF(Oracle)
+    'y': noisy data, # the noisy signal(M channel)
+    'x': clean data, # the clean signal(M channel)
+    'n': noise data, # the noise signal(M channel)
+    'index': index, # the index of the node in the graph
+    ''
+}
+
+```
+
+the code will create a model, train him and save it in the models folder.
 
 for evaluation, run the following command:
 
