@@ -1,5 +1,0 @@
-,filename,len_in_sec,sr,num_hops,OVRL_raw,SIG_raw,BAK_raw,OVRL,SIG,BAK,P808_MOS
-0,/home/dsi/levidan2/code/MVDR/evaluation/data/300ms/test_data/wav/wavs_epoc_100/speaker_ref.wav,7.856,16000,6,2.497184,2.6588662,3.7710798,2.409293140107998,2.6572385009588344,3.799352914067813,3.1245239
-1,/home/dsi/levidan2/code/MVDR/evaluation/data/300ms/test_data/wav/wavs_epoc_100/y_GEVD.wav,7.856,16000,6,1.2739438,1.9228792,1.2588559,1.3567840105366271,2.036427300902528,1.4201117711716222,2.5225856
-2,/home/dsi/levidan2/code/MVDR/evaluation/data/300ms/test_data/wav/wavs_epoc_100/y_noisy.wav,7.856,16000,6,1.0944911,1.3458585,1.0951549,1.1856888511861743,1.494258426125884,1.208166079107764,2.2148488
-3,/home/dsi/levidan2/code/MVDR/evaluation/data/300ms/test_data/wav/wavs_epoc_100/y_GCN.wav,7.856,16000,6,1.0545124,1.1486917,1.0222877,1.1469787993391063,1.2958520400881723,1.1113068651627527,2.660246
