@@ -1,0 +1,16 @@
+# Ignore compiled files
+*.o
+*.out
+
+# Ignore log files
+*.log
+
+# Ignore dataset directory
+dataset/
+
+# Ignore wav files
+*.wav
+
+# Python cache files
+__pycache__/
+*.pyc
