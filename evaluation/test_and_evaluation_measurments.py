@@ -99,8 +99,8 @@ def test(model, params,paths, test_loader, device):
             SNR_out_noisy_first_spk=10*torch.log10(torch.mean(first_spk_hat_noisy_first_channel[params.both_tim_st*params.fs:params.both_tim_fn*params.fs]**2)/torch.mean((noise_hat_noisy_first_channel[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])**2)) 
             SNR_out_gcn_first_spk=10*torch.log10(torch.mean(first_spk_hat_gcn_first_channel[params.both_tim_st*params.fs:params.both_tim_fn*params.fs]**2)/torch.mean((noise_hat_gcn_first_channel[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])**2)) 
             print('SNR in: {:.2f}'.format(SNR_in.cpu().numpy()[0][0]))
-            print('SNR out MVDR: {:.2f}'.format(SNR_out_noisy_first_spk.cpu().numpy()))
-            print('SNR out GCN: {:.2f}'.format(SNR_out_gcn_first_spk.cpu().numpy()))
+            print('SNR out GEVD: {:.2f}'.format(SNR_out_noisy_first_spk.cpu().numpy()))
+            print('SNR out peerRTF: {:.2f}'.format(SNR_out_gcn_first_spk.cpu().numpy()))
 
             #%% STOI and ESTOI calculation  
     
