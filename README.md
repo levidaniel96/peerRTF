@@ -1,5 +1,5 @@
 # peerRTF: Robust MVDR Beamforming Using Graph Convolutional Network
-<div align="center">
+
 ## Description
 
 This repository contains the code for the paper "peerRTF: Robust MVDR Beamforming Using Graph Convolutional Network"
