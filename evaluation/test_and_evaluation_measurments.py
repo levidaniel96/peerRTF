@@ -112,14 +112,13 @@ def test(model, params,paths, test_loader, device):
 
             STOI_out_gcn_first_spk=stoi(first_spk_ref[0,params.both_tim_st*params.fs:params.both_tim_fn*params.fs].cpu(),y_hat_gcn_first_channel[params.both_tim_st*params.fs:params.both_tim_fn*params.fs].cpu(),params.fs)
             ESTOI_out_gcn_first_spk=stoi(first_spk_ref[0,params.both_tim_st*params.fs:params.both_tim_fn*params.fs].cpu(),y_hat_gcn_first_channel[params.both_tim_st*params.fs:params.both_tim_fn*params.fs].cpu(),params.fs,extended=True)
-            ## print only 2 after the point 
         
             print('STOI in: {:.2f}'.format(100*STOI_in_first_spk))
-            print('STOI out MVDR: {:.2f}'.format(100*STOI_out_noisy_first_spk))
-            print('STOI out GCN: {:.2f}'.format(100*STOI_out_gcn_first_spk))
+            print('STOI out GEVD: {:.2f}'.format(100*STOI_out_noisy_first_spk))
+            print('STOI out peerRTF: {:.2f}'.format(100*STOI_out_gcn_first_spk))
             print('ESTOI in: {:.2f}'.format(100*ESTOI_in_first_spk))
-            print('ESTOI out MVDR: {:.2f}'.format(100*ESTOI_out_noisy_first_spk))
-            print('ESTOI out GCN: {:.2f}'.format(100*ESTOI_out_gcn_first_spk))
+            print('ESTOI out GEVD: {:.2f}'.format(100*ESTOI_out_noisy_first_spk))
+            print('ESTOI out peerRTF: {:.2f}'.format(100*ESTOI_out_gcn_first_spk))
 
 
             #%% save input and outputs in wav files
@@ -136,5 +135,5 @@ def test(model, params,paths, test_loader, device):
                 os.makedirs(dir)
             wav.write(dir+ '/GEVD.wav',params.fs, y_hat_noisy_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])
             wav.write(dir+ '/noisy signal.wav', params.fs, y_ref_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])            
-            wav.write(dir+ '/GCN.wav', params.fs, y_hat_gcn_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])
+            wav.write(dir+ '/peerRTF.wav', params.fs, y_hat_gcn_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])
             wav.write(dir+ '/clean signal.wav', params.fs, speaker_ref_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])
