@@ -84,7 +84,7 @@ ESTOI out GEVD: 43.14
 ESTOI out peerRTF: 43.68
 
 DNSMOS results:
-clean signal 3.08
+referance signal 3.08
 noisy signal 2.25
-GCN 2.55
+peerRTF 2.55
 GEVD 2.44
