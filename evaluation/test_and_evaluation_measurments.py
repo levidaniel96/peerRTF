@@ -136,4 +136,4 @@ def test(model, params,paths, test_loader, device):
             wav.write(dir+ '/GEVD.wav',params.fs, y_hat_noisy_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])
             wav.write(dir+ '/noisy signal.wav', params.fs, y_ref_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])            
             wav.write(dir+ '/peerRTF.wav', params.fs, y_hat_gcn_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])
-            wav.write(dir+ '/clean signal.wav', params.fs, speaker_ref_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])
+            wav.write(dir+ '/referance signal.wav', params.fs, speaker_ref_normalized[params.both_tim_st*params.fs:params.both_tim_fn*params.fs])
