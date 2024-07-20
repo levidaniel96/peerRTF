@@ -74,14 +74,14 @@ and finally, we calculate the SNR, STOI,ESTOI and DNSMOS scores for the estimate
 example of an output:
 ```bash
 SNR in: -6.00
-SNR out MVDR: 17.48
-SNR out GCN: 19.30
+SNR out GEVD: 17.48
+SNR out peerRTF: 19.30
 STOI in: 31.82
-STOI out MVDR: 59.85
-STOI out GCN: 59.70
+STOI out GEVD: 59.85
+STOI out peerRTF: 59.70
 ESTOI in: 20.52
-ESTOI out MVDR: 43.14
-ESTOI out GCN: 43.68
+ESTOI out GEVD: 43.14
+ESTOI out peerRTF: 43.68
 
 DNSMOS results:
 clean signal 3.08
