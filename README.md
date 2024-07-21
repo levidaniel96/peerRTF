@@ -35,7 +35,7 @@ for training, run the following command:
 ```bash
 python main.py
 ```
-Note that you need to collect the data and put it in the data folder. You can estimate the RTFs using the code provided in this repository.
+Note that you need to collect the data and put it in the data folder. You can estimate the RTFs using the code provided in [this repository](https://github.com/levidaniel96/DSPAudio-Tool/tree/main/multi_channel_algorithms/RTF_estimation).
 
 the data should be in the following format:
 ```bash
