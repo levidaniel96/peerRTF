@@ -35,8 +35,7 @@ for training, run the following command:
 ```bash
 python main.py
 ```
-note that you need to collect the data and put it in the data folder. 
-you can estimate the RTFs using the code provided in:(https://github.com/levidaniel96/DSPAudio-Tool/tree/main/multi_channel_algorithms/RTF_estimation)
+Note that you need to collect the data and put it in the data folder. You can estimate the RTFs using the code provided in this repository.
 
 the data should be in the following format:
 ```bash
@@ -73,10 +72,12 @@ each graph_data should contain the following:
 }
 
 ```
-
-the code will create a model, train him and save it in the models folder.
+The code will create a model, train it, and save it in the models folder.
 
 ## Evaluation
+
+For evaluation, run the following command:
+
 
 ```bash
 cd evaluation 
@@ -108,7 +109,7 @@ If you use this code in your research, please cite our paper:
 ```bash
 
 @article{peerRTF,
-  title={	peerRTF: Robust MVDR Beamforming Using Graph Convolutional Network },
+  title={peerRTF: Robust MVDR Beamforming Using Graph Convolutional Network },
   author={Amit Sofer, Daniel Levi, Sharon Gannot},
   journal=arXiv preprint arXiv:2407.01779},
   year={2024},
