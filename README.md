@@ -103,6 +103,9 @@ peerRTF 2.55
 GEVD 2.44
 ```
 ## Citation
+If you use this code in your research, please cite our paper:
+
+```bash
 
 @article{peerRTF,
   title={	peerRTF: Robust MVDR Beamforming Using Graph Convolutional Network },
@@ -110,3 +113,4 @@ GEVD 2.44
   journal=arXiv preprint arXiv:2407.01779},
   year={2024},
 }
+```
