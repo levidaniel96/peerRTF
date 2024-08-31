@@ -11,7 +11,7 @@
 
 </div>
 
-![](https://github.com/levidaniel96/peerRTF/blob/main/Block_diagram.png)
+![](https://github.com/levidaniel96/peerRTF/blob/main/block_diagram_multi.png)
 ## Introduction
 
 This repository contains the implementation of the method introduced in our paper, which presents a novel approach for accurately and robustly estimating Relative Transfer Functions (RTFs). Accurate RTF estimation is crucial for designing effective microphone array beamformers, particularly in challenging noisy and reverberant environments.
