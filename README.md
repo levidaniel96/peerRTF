@@ -108,10 +108,12 @@ If you use this code in your research, please cite our paper:
 
 ```bash
 
-@article{peerRTF,
-  title={peerRTF: Robust MVDR Beamforming Using Graph Convolutional Network },
-  author={Amit Sofer, Daniel Levi, Sharon Gannot},
-  journal=arXiv preprint arXiv:2407.01779},
-  year={2024},
-}
+@article{levi2025peerrtf,
+ title={{peerRTF: Robust MVDR} Beamforming Using Graph Convolutional Network},
+ author={Levi, Daniel and Sofer, Amit and Gannot, Sharon},
+ journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing},
+ year={2025},
+ volume={33},
+ pages={1349--1363},
+ publisher={IEEE}
 ```
